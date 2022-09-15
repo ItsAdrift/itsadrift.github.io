@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,14 +77,147 @@
 </head>
 
 <body class="bg-neutral-50 dark:bg-neutral-900">
-    <div class="container mx-auto">
-        <h1 class="text-5xl font-bold text-center text-white">
+
+
+
+    
+    <div class="max-w-2xl mx-auto pt-1">
+    
+        <div class="border-b border-gray-200 dark:border-gray-700 mb-4">
+            <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                <li class="mr-2" role="presentation">
+                    <button class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Freezer</button>
+                </li>
+                <li class="mr-2" role="presentation">
+                    <button class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Front</button>
+                </li>
+            </ul>
+        </div>
+        <div id="myTabContent">
+            <div class="bg-gray-50 p-4 rounded-lg dark:bg-neutral-900 hidden" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Calculate the wraps in the Freezer/Fridge (GF wraps in the Freezer) <strong class="font-medium text-gray-800 dark:text-white">Make sure to pull wraps before calculating</strong>.</p>
+                <div class="flex flex-col items-center shrink-0 dark:text-white pt-16">
+                    <div id="survey_options">
+                      <div class="flex flex-col dark:text-gray-100">
+                        <span class="text-2xl font-bold">Large Wraps</span>
+                        <input type="number" id="largeWrapsFull" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Boxes">
+                        <input type="number" id="largeWraps" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Packets">
             
-        </h1>
-    </div>
+                        <span class="text-2xl font-bold pt-5">Regular Wraps</span>
+                        <input type="number" id="regWrapsFull" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Boxes">
+                        <input type="number" id="regWraps" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Packets">
+            
+                        <span class="text-2xl font-bold pt-5">Multigrain Wraps</span>
+                        <input type="number" id="multiWrapsFull" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Boxes">
+                        <input type="number" id="multiWraps" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Packets">
+            
+                        <span class="text-2xl font-bold pt-5">Gluten Free Wraps</span>
+                        <input type="number" id="gfWrapsFull" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Boxes">
+                        <input type="number" id="gfWraps" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Packets">
+                      </div>
+                      
+                      <div class="pt-5 text-2xl font-bold dark:text-gray-100">Other</div>
+                      <div id="holder" class="flex flex-col">
+                        <input type="text" name="survey_options[]" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96" placeholder="Other Amounts">
+                      </div>
+                      
+                      
+                    </div>
+                    <div class="dark:text-gray-300">
+                      <a href="#" id="add_more_fields" class="font-bold">+ Add More</a>
+                      <a href="#" id="remove_fields" class="font-bold pl-5">- Remove Field</a>
+                    </div>
+                    
+                    </h3>
+                  </div>
+            </div>
+
+            <!--FRONT-->
+
+            <div class="bg-gray-50 p-4 rounded-lg dark:bg-neutral-900" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Calculate the wraps out the front. <strong class="font-medium text-gray-800 dark:text-white">Make sure to pull wraps before calculating</strong>.</p>
+                    
+                <div class="flex flex-col items-center shrink-0 dark:text-gray-100 pt-16">
+                    <div class="flex flex-col">
+                        <span class="text-left text-2xl font-bold">Large Wraps</span>
+                        <input type="number" id="frontlargeWrapsFull" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Packets">
+                        <input type="number" id="frontlargeWraps" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Other">
+        
+                        <span class="text-2xl font-bold pt-5 text-left">Regular Wraps</span>
+                        <input type="number" id="frontregWrapsFull" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Packets">
+                        <input type="number" id="frontregWraps" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Other">
+        
+                        <span class="text-2xl font-bold pt-5 text-left">Multigrain Wraps</span>
+                        <input type="number" id="frontmultiWrapsFull" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Full Packets">
+                        <input type="number" id="frontmultiWraps" class="border-2 rounded border-gray-500 dark:border-3 p-2 dark:text-black sm:w-48 md:w-96 mt-2" placeholder="Other">
+                    </div>
+                </div>    
+                
+                
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center shrink-0">
+            <button id="submit" class="px-4 py-2 font-semibold text-sm bg-green-500 hover:bg-green-600 text-white rounded-full shadow-sm">Submit</button>
+        </div>
+        
+        <h3 id="result">
+            <div class="overflow-x-auto relative mt-10 mb-10 px-6">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-neutral-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="py-3 px-6">
+                                Position
+                            </th>
+                            <th scope="col" class="py-3 px-6">
+                                Value
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700">
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Freezer
+                            </th>
+                            <td id="freezer" class="py-4 px-6">
+                                0
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700">
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Fridge
+                            </th>
+                            <td id="fridge" class="py-4 px-6">
+                                0
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700">
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Proofer
+                            </th>
+                            <td class="py-4 px-6">
+                                ---
+                            </td>
+                        </tr>
+                        <tr class="bg-white dark:bg-neutral-800">
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                Front
+                            </th>
+                            <td id="front" class="py-4 px-6">
+                                0
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+    
 
 </body>
 
 </html>
-<!--<script src="main.js" type="text/javascript"></script>-->
+<script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js" type="text/javascript"></script>
+<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+<script src="wrapCount.js" type="text/javascript"></script>
 <script src="theme.js" type="text/javascript"></script>
+

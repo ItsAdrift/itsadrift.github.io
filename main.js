@@ -12,6 +12,7 @@ add_more_fields.onclick = function(){
   newField.setAttribute('class', 'border-2 rounded border-gray-500 dark:border-green-500 dark:border-3 dark:text-black p-2 sm:w-48 md:w-96 mt-5')
   newField.setAttribute('placeholder','Other Amounts');
   holder.appendChild(newField);
+  return false;
 }
 
 remove_fields.onclick = function(){
@@ -19,6 +20,7 @@ remove_fields.onclick = function(){
   if(input_tags.length > 1) {
     holder.removeChild(input_tags[(input_tags.length) - 1]);
   }
+  return false;
 }
 
 document.getElementById("result").style.display = 'none';
