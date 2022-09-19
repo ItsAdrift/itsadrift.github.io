@@ -1,0 +1,8 @@
+.request-popup .leaflet-popup-content-wrapper {
+    border-radius: 0px;
+    box-shadow: 5px 10px 10px #00000098;
+  }
+
+  span {
+    font-size: 15px;
+  }
