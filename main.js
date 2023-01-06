@@ -56,7 +56,6 @@ function total() {
   var freezer = +document.getElementById("bread_freezer").innerText;
 
   var front = validate(document.getElementById("bread_front").value);
-  document.getElementById("result_bread_front").innerText = front;
 
   var retarder = 0;
   var v = document.getElementById("bread_retarder").value;
@@ -65,7 +64,8 @@ function total() {
   } else {
     retarder = document.getElementById("bread_retarder").getAttribute("placeholder");
   }
-  document.getElementById("bread_proofer").innerText = +retarder;
+  document.getElementById("bread_proofer").innerText = +front;
+  document.getElementById("bread_fridge").innerText = retarder;
 
   document.getElementById("bread_total").innerText= +(Number.parseInt(freezer)+Number.parseInt(front)+Number.parseInt(retarder));
 
